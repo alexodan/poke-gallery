@@ -1,4 +1,12 @@
-export const Pokemon = (id, name, height, weight, imageUrl, types, stats) => ({
+export const PokemonModel = (
+  id,
+  name,
+  height,
+  weight,
+  imageUrl,
+  types,
+  stats
+) => ({
   id: id,
   name: name,
   height: height,
