@@ -3,10 +3,19 @@ import styled from "styled-components";
 import TypeIcons from "./TypeIcons";
 import StatPill from "./StatPill";
 
-const StyledPokemon = styled.div``;
+const StyledPokemon = styled.div`
+  color: white;
+`;
 
-const Pokemon = ({ id, name, height, weight, imageUrl, types, stats }) => {
-  console.log(id, name, height, weight, imageUrl, types, stats);
+const Image = styled.img`
+  max-width: 400px;
+  max-height: 400px;
+`;
+
+const Pokemon = ({ pokemon }) => {
+  console.log(pokemon);
+  const { id, name, height, weight, imageUrl, types, stats } = pokemon;
+
   return (
     <StyledPokemon>
       <h3>{id}</h3>
@@ -16,7 +25,7 @@ const Pokemon = ({ id, name, height, weight, imageUrl, types, stats }) => {
           <span>Height: {height}m</span>
           <span>Weight: {weight}kg</span>
         </div>
-        <img src={imageUrl} alt={name} />
+        <Image src={imageUrl} alt={name} />
         <div>
           <TypeIcons types={types} />
           <div>

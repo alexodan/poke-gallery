@@ -2,16 +2,27 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledStatPill = styled.div`
-  background-color: "#FAFAFA";
-  color: "#A0A0A0";
+  background-color: #fafafa;
+  color: #606060;
   border-radius: 5px;
   padding: 5px;
+  font-size: 12px;
+  display: inline;
 `;
+
+const labels = {
+  hp: "HP",
+  attack: "ATTACK",
+  defense: "DEFENSE",
+  "special-attack": "SP. ATTACK",
+  "special-defense": "SP. DEFENSE",
+  speed: "SPEED",
+};
 
 const StatPill = ({ label, n }) => {
   return (
     <StyledStatPill>
-      {label}: {n}
+      {labels[label]}: {n}
     </StyledStatPill>
   );
 };

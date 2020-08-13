@@ -1,8 +1,22 @@
+import { PokemonModel } from "./PokemonModel";
+
 const IMAGE_API_URL = "https://pokeres.bastionbot.org/images/pokemon";
 const DATA_API_URL = "https://pokeapi.co/api/v2/pokemon";
 
-export const fetchImageApi = (id) =>
-  fetch(`${IMAGE_API_URL}/${id}.png`).then((res) => res.json());
+const fetchDataApi = (query) => fetch(`${DATA_API_URL}/${query}`);
 
-export const fetchDataApi = (query) =>
-  fetch(`${DATA_API_URL}/${query}`).then((res) => res.json());
+export const fetchPokemonData = (query) =>
+  fetchDataApi(query)
+    .then((res1) => res1.json())
+    .then((data) => {
+      const { id, name, height, weight, types, stats } = data;
+      return PokemonModel(
+        id,
+        name,
+        height,
+        weight,
+        `${IMAGE_API_URL}/${id}.png`,
+        types,
+        stats
+      );
+    });
