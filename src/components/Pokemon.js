@@ -2,9 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import TypeIcons from "./TypeIcons";
 import StatPill from "./StatPill";
+import { backgroundColor } from "./theme";
 
-const StyledPokemon = styled.div`
+const StyledContainer = styled.div`
   color: white;
+  background-color: ${backgroundColor};
+  max-width: 960px;
+  border-radius: 20px;
+  padding: 40px;
+  header {
+    h2 {
+      text-transform: capitalize;
+      font-size: 2rem;
+    }
+  }
+  main {
+    display: flex;
+  }
+  .attributes {
+    width: 27%;
+  }
+`;
+
+const ImageContainer = styled.div`
+  width: 43%;
 `;
 
 const Image = styled.img`
@@ -12,37 +33,60 @@ const Image = styled.img`
   max-height: 400px;
 `;
 
-const Pokemon = ({ pokemon }) => {
-  console.log(pokemon);
-  const { id, name, height, weight, imageUrl, types, stats } = pokemon;
+const StyledStats = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  .stats {
+    h2 {
+      margin: 10px 0 20px 0;
+      font-size: 2rem;
+    }
+    .stats-pills {
+      border-left: 4px solid lightgray;
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      padding-left: 3px;
+      .stats-pills_container {
+        margin: 5px 5px 15px 10px;
+      }
+    }
+  }
+`;
 
+const Pokemon = ({ pokemon = {} }) => {
+  const { id, name, height, weight, imageUrl, types, stats } = pokemon;
   return (
-    <StyledPokemon>
-      <h3>{id}</h3>
-      <h2>{name}</h2>
-      <div>
+    <StyledContainer>
+      <header>
+        <h3>{id}</h3>
+        <h2>{name}</h2>
+      </header>
+      <main>
         <div className="attributes">
           <span>Height: {height}m</span>
           <span>Weight: {weight}kg</span>
         </div>
-        <Image src={imageUrl} alt={name} />
-        <div>
+        <ImageContainer>
+          <Image src={imageUrl} alt={name} />
+        </ImageContainer>
+        <StyledStats>
           <TypeIcons types={types} />
-          <div>
-            <h2 className="stats-title">
+          <div className="stats">
+            <h2>Base stats:</h2>
+            <div className="stats-pills">
               {stats &&
                 stats.map((stat, idx) => (
-                  <StatPill
-                    key={idx}
-                    label={stat.stat.name}
-                    n={stat.base_stat}
-                  />
+                  <div key={idx} className="stats-pills_container">
+                    <StatPill label={stat.stat.name} n={stat.base_stat} />
+                  </div>
                 ))}
-            </h2>
+            </div>
           </div>
-        </div>
-      </div>
-    </StyledPokemon>
+        </StyledStats>
+      </main>
+    </StyledContainer>
   );
 };
 

@@ -6,8 +6,9 @@ const StyledStatPill = styled.div`
   color: #606060;
   border-radius: 5px;
   padding: 5px;
-  font-size: 12px;
+  font-size: 10px;
   display: inline;
+  font-weight: bold;
 `;
 
 const labels = {

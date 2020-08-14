@@ -1,6 +1,5 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { backgroundColor } from "./theme";
+import { ThemeProvider } from "styled-components";
 
 const ThemeToggleContext = React.createContext();
 
@@ -8,12 +7,8 @@ export const useTheme = () => React.useContext(ThemeToggleContext);
 
 export const PokeThemeProvider = ({ children }) => {
   const [themeState, setThemeState] = React.useState({
-    mode: "electric",
+    mode: "default",
   });
-
-  const Wrapper = styled.div`
-    background-color: ${backgroundColor};
-  `;
 
   const changeTheme = (pokemonType) => {
     setThemeState({ mode: pokemonType });
@@ -26,7 +21,7 @@ export const PokeThemeProvider = ({ children }) => {
           mode: themeState.mode,
         }}
       >
-        <Wrapper>{children}</Wrapper>
+        {children}
       </ThemeProvider>
     </ThemeToggleContext.Provider>
   );

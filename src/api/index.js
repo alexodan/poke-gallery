@@ -1,5 +1,6 @@
 import { PokemonModel } from "./PokemonModel";
 
+// alternative: https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png
 const IMAGE_API_URL = "https://pokeres.bastionbot.org/images/pokemon";
 const DATA_API_URL = "https://pokeapi.co/api/v2/pokemon";
 
@@ -16,7 +17,7 @@ export const fetchPokemonData = (query) =>
         height,
         weight,
         `${IMAGE_API_URL}/${id}.png`,
-        types,
+        types.map((type) => type.type.name),
         stats
       );
     });
