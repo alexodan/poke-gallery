@@ -5,13 +5,15 @@ export const PokemonModel = (
   weight,
   imageUrl,
   types,
-  stats
+  stats,
+  japName
 ) => ({
-  id: id,
-  name: name,
-  height: height,
-  weight: weight,
-  imageUrl: imageUrl,
-  types: types,
-  stats: stats,
+  id,
+  name,
+  height,
+  weight,
+  imageUrl,
+  types,
+  stats,
+  japName,
 });

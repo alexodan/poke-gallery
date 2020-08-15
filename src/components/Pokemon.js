@@ -56,17 +56,22 @@ const StyledStats = styled.div`
 `;
 
 const Pokemon = ({ pokemon = {} }) => {
-  const { id, name, height, weight, imageUrl, types, stats } = pokemon;
+  const { id, name, height, weight, imageUrl, types, stats, japName } = pokemon;
   return (
     <StyledContainer>
       <header>
         <h3>{id}</h3>
         <h2>{name}</h2>
+        <h2>{japName}</h2>
       </header>
       <main>
         <div className="attributes">
-          <span>Height: {height}m</span>
-          <span>Weight: {weight}kg</span>
+          <p>
+            <strong>Height:</strong> {height}m
+          </p>
+          <p>
+            <strong>Weight:</strong> {weight}kg
+          </p>
         </div>
         <ImageContainer>
           <Image src={imageUrl} alt={name} />
