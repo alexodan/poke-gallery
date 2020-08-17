@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
   border-radius: 20px;
   padding: 40px;
   header {
-    h2 {
+    .name {
       text-transform: capitalize;
       font-size: 2rem;
     }
@@ -55,14 +55,21 @@ const StyledStats = styled.div`
   }
 `;
 
+const StyledJapName = styled.h2`
+  opacity: 0.25;
+  color: black;
+  font-size: 6rem;
+  font-weight: bold;
+`;
+
 const Pokemon = ({ pokemon = {} }) => {
   const { id, name, height, weight, imageUrl, types, stats, japName } = pokemon;
   return (
     <StyledContainer>
       <header>
         <h3>{id}</h3>
-        <h2>{name}</h2>
-        <h2>{japName}</h2>
+        <h2 className="name">{name}</h2>
+        <StyledJapName>{japName}</StyledJapName>
       </header>
       <main>
         <div className="attributes">
