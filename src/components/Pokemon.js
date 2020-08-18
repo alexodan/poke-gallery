@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import TypeIcons from "./TypeIcons";
-import StatPill from "./StatPill";
 import { backgroundColor } from "./theme";
+import Stats from "./Stats";
 
 const StyledContainer = styled.div`
   color: white;
@@ -10,49 +9,36 @@ const StyledContainer = styled.div`
   max-width: 960px;
   border-radius: 20px;
   padding: 40px;
+  position: relative;
   header {
+    position: absolute;
+    top: 100px;
+    left: 50px;
     .name {
       text-transform: capitalize;
       font-size: 2rem;
+    }
+    .attributes {
+      width: 27%;
     }
   }
   main {
     display: flex;
   }
-  .attributes {
-    width: 27%;
-  }
 `;
 
 const ImageContainer = styled.div`
-  width: 43%;
+  width: 70%;
+  margin: 0 5%;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const Image = styled.img`
   max-width: 400px;
   max-height: 400px;
-`;
-
-const StyledStats = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  .stats {
-    h2 {
-      margin: 10px 0 20px 0;
-      font-size: 2rem;
-    }
-    .stats-pills {
-      border-left: 4px solid lightgray;
-      display: flex;
-      flex-wrap: wrap;
-      width: 50%;
-      padding-left: 3px;
-      .stats-pills_container {
-        margin: 5px 5px 15px 10px;
-      }
-    }
-  }
+  min-width: 270px;
+  width: 65%;
 `;
 
 const StyledJapName = styled.h2`
@@ -70,33 +56,16 @@ const Pokemon = ({ pokemon = {} }) => {
         <h3>{id}</h3>
         <h2 className="name">{name}</h2>
         <StyledJapName>{japName}</StyledJapName>
+        <div className="attributes">
+          <p>Height: {height}m</p>
+          <p>Weight: {weight}kg</p>
+        </div>
       </header>
       <main>
-        <div className="attributes">
-          <p>
-            <strong>Height:</strong> {height}m
-          </p>
-          <p>
-            <strong>Weight:</strong> {weight}kg
-          </p>
-        </div>
         <ImageContainer>
           <Image src={imageUrl} alt={name} />
         </ImageContainer>
-        <StyledStats>
-          <TypeIcons types={types} />
-          <div className="stats">
-            <h2>Base stats:</h2>
-            <div className="stats-pills">
-              {stats &&
-                stats.map((stat, idx) => (
-                  <div key={idx} className="stats-pills_container">
-                    <StatPill label={stat.stat.name} n={stat.base_stat} />
-                  </div>
-                ))}
-            </div>
-          </div>
-        </StyledStats>
+        <Stats types={types} stats={stats} />
       </main>
     </StyledContainer>
   );

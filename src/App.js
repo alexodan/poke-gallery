@@ -7,7 +7,7 @@ import { useTheme } from "./components/ThemeContext";
 import { withTheme } from "styled-components";
 
 function App() {
-  const [pokemonId, setPokemonId] = useState(699);
+  const [pokemonId, setPokemonId] = useState(94);
   const [pokemonName, setPokemonName] = useState("");
   const [pokemon, setPokemon] = useState(null);
   const pokeTheme = useTheme();
