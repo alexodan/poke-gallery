@@ -25,7 +25,6 @@ function App() {
   }, [pokemonName]);
 
   useEffect(() => {
-    // If there is more than one random select
     if (pokemon && pokemon.types)
       pokeTheme.changeTheme(
         pokemon.types[Math.floor(Math.random() * pokemon.types.length)]
