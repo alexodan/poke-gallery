@@ -3,14 +3,20 @@ import styled from "styled-components";
 
 const StyledTypeIcons = styled.div`
   display: flex;
+  img {
+    width: 75px;
+  }
 `;
 
-const TypeIcons = (types) => (
-  <StyledTypeIcons>
-    {types &&
-      types.length > 0 &&
-      types.map((type, idx) => <div key={idx}>{type}</div>)}
-  </StyledTypeIcons>
-);
+const TypeIcons = ({ types }) => {
+  if (!types || types.length < 1) return null;
+  return (
+    <StyledTypeIcons>
+      {types.map((type, idx) => (
+        <img key={idx} src={`/icons/${type}@2x.png`} alt={type} />
+      ))}
+    </StyledTypeIcons>
+  );
+};
 
 export default TypeIcons;

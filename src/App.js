@@ -1,10 +1,28 @@
 import React, { useState } from "react";
 import "./App.css";
-import Pokemon from "./components/Pokemon";
 import { useEffect } from "react";
 import { fetchPokemonData } from "./api";
 import { useTheme } from "./components/ThemeContext";
 import { withTheme } from "styled-components";
+import { backgroundColor } from "./components/theme";
+import styled from "styled-components";
+
+import Pokemon from "./components/Pokemon";
+import Search from "./components/Search";
+
+const StyledContainer = styled.div`
+  color: white;
+  background-color: ${backgroundColor};
+  max-width: 960px;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+`;
 
 function App() {
   const [pokemonId, setPokemonId] = useState(94);
@@ -32,7 +50,10 @@ function App() {
   }, [pokemon]);
 
   return (
-    <div className="App">{pokemon ? <Pokemon pokemon={pokemon} /> : null}</div>
+    <StyledContainer>
+      {pokemon ? <Pokemon pokemon={pokemon} /> : null}
+      <Search />
+    </StyledContainer>
   );
 }
 
