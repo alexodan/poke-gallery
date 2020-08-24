@@ -20,12 +20,12 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 60vh;
   flex-direction: column;
 `;
 
 function App() {
-  const [pokemonId, setPokemonId] = useState(94);
+  const [pokemonId, setPokemonId] = useState(25);
   const [pokemonName, setPokemonName] = useState("");
   const [pokemon, setPokemon] = useState(null);
   const pokeTheme = useTheme();

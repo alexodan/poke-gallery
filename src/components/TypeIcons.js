@@ -10,6 +10,7 @@ const StyledTypeIcons = styled.div`
 
 const TypeIcons = ({ types }) => {
   if (!types || types.length < 1) return null;
+  console.log(types);
   return (
     <StyledTypeIcons>
       {types.map((type, idx) => (
