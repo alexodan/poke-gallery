@@ -17,6 +17,7 @@ const Header = styled.header`
 
 const Main = styled.main`
   display: flex;
+  padding-top: 25px;
 `;
 
 const ImageContainer = styled.div`

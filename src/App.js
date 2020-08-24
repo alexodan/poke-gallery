@@ -20,7 +20,8 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 55vh;
+  justify-content: space-around;
   flex-direction: column;
 `;
 
