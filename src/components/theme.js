@@ -8,5 +8,7 @@ export const backgroundColor = theme("mode", {
   rock: "#4C3429",
   water: "#80C5DE",
   poison: "#7500EB",
+  fire: "#E25822",
+  flying: "#9B73FF",
   default: "#008080",
 });

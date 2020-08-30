@@ -29,7 +29,7 @@ const ImageContainer = styled.div`
 
 const Image = styled.img`
   max-width: 400px;
-  max-height: 400px;
+  max-height: 290px;
   min-width: 270px;
   width: 55%;
 `;

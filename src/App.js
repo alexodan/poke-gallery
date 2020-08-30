@@ -26,7 +26,7 @@ const StyledContainer = styled.div`
 `;
 
 function App() {
-  const [pokemonId, setPokemonId] = useState(25);
+  const [pokemonId, setPokemonId] = useState(6);
   const [pokemonName, setPokemonName] = useState("");
   const [pokemon, setPokemon] = useState(null);
   const pokeTheme = useTheme();
