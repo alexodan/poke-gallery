@@ -1,21 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import { useRef } from "react";
 
 const StyledSearch = styled.div`
   display: flex;
   justify-content: space-around;
 `;
 
-const Search = () => {
+const Search = ({ searchById, searchByName }) => {
+  const id = useRef(null);
+  const name = useRef(null);
+
   return (
     <StyledSearch>
       <div>
-        <input type="text" name="pokemonName" placeholder="Search name" />
-        <button>Go!</button>
+        <input
+          ref={name}
+          type="text"
+          name="pokemonName"
+          placeholder="Search name"
+        />
+        <button onClick={() => searchByName(name.current)}>Go!</button>
       </div>
       <div>
-        <input type="text" name="pokemonName" placeholder="Search number" />
-        <button>Go!</button>
+        <input
+          ref={id}
+          type="text"
+          name="pokemonName"
+          placeholder="Search number"
+        />
+        <button onClick={() => searchById(id.current)}>Go!</button>
       </div>
     </StyledSearch>
   );

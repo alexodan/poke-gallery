@@ -50,10 +50,18 @@ function App() {
       );
   }, [pokemon]);
 
+  const searchById = (id) => {
+    setPokemonId(id.value);
+  };
+
+  const searchByName = (name) => {
+    setPokemonName(name.value);
+  };
+
   return (
     <StyledContainer>
       {pokemon ? <Pokemon pokemon={pokemon} /> : null}
-      <Search />
+      <Search searchById={searchById} searchByName={searchByName} />
     </StyledContainer>
   );
 }

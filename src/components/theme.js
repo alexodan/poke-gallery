@@ -10,5 +10,6 @@ export const backgroundColor = theme("mode", {
   poison: "#7500EB",
   fire: "#E25822",
   flying: "#9B73FF",
+  fighting: "#CD853F",
   default: "#008080",
 });
