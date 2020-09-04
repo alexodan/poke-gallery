@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import { useEffect } from "react";
 import { fetchPokemonData } from "./api";
 import { useTheme } from "./components/ThemeContext";
@@ -20,7 +19,7 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 55vh;
+  min-height: 50vh;
   justify-content: space-around;
   flex-direction: column;
 `;

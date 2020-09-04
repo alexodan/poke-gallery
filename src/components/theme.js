@@ -11,5 +11,7 @@ export const backgroundColor = theme("mode", {
   fire: "#E25822",
   flying: "#9B73FF",
   fighting: "#CD853F",
+  bug: "#A5D985",
+  grass: "#53843F",
   default: "#008080",
 });

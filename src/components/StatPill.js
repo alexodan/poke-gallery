@@ -5,10 +5,11 @@ const StyledStatPill = styled.div`
   background-color: #fafafa;
   color: #606060;
   border-radius: 5px;
-  padding: 5px;
-  font-size: 10px;
+  padding: 6px 8px;
+  font-size: 12px;
   display: inline;
   font-weight: bold;
+  letter-spacing: 1px;
 `;
 
 const labels = {
