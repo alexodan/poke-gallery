@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
   background-color: ${backgroundColor};
   max-width: 960px;
   border-radius: 20px;
-  padding: 40px;
+  padding: 35px 40px 30px 40px;
   position: relative;
   display: flex;
   justify-content: center;

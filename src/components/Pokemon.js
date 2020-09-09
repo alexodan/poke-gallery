@@ -17,7 +17,6 @@ const Header = styled.header`
 
 const Main = styled.main`
   display: flex;
-  padding-top: 25px;
 `;
 
 const ImageContainer = styled.div`
@@ -29,9 +28,9 @@ const ImageContainer = styled.div`
 
 const Image = styled.img`
   max-width: 400px;
-  max-height: 290px;
+  max-height: 320px;
   min-width: 270px;
-  width: 55%;
+  width: 60%;
 `;
 
 const StyledJapName = styled.h2`
