@@ -3,8 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Pokemon Gallery
 
 This project is a pokemon gallery, enjoy it!
-
-![Example of gallery](https://github.com/alexodan/poke-gallery/assets/ludicolo.png)
+![Example of gallery](https://github.com/alexodan/poke-gallery/blob/master/assets/ludicolo.png)
 
 ## Available Scripts
 
