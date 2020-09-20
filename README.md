@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project is a pokemon gallery, enjoy it!
 
+![Example of gallery](https://github.com/alexodan/poke-gallery/assets/ludicolo.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
