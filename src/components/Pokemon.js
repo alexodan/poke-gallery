@@ -1,49 +1,19 @@
 import React from "react";
-import styled from "styled-components";
 import Stats from "./Stats";
+import {
+  StyledContainer,
+  Header,
+  Main,
+  ImageContainer,
+  Image,
+  StyledJapName,
+} from "./Pokemon.css";
 
-const Header = styled.header`
-  position: absolute;
-  top: 40px;
-  left: 50px;
-  .name {
-    text-transform: capitalize;
-    font-size: 2rem;
-  }
-  .attributes {
-    width: 27%;
-  }
-`;
-
-const Main = styled.main`
-  display: flex;
-`;
-
-const ImageContainer = styled.div`
-  width: 70%;
-  margin: 0 10% 0 5%;
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const Image = styled.img`
-  max-width: 400px;
-  max-height: 320px;
-  min-width: 270px;
-  width: 60%;
-`;
-
-const StyledJapName = styled.h2`
-  opacity: 0.25;
-  color: black;
-  font-size: 6rem;
-  font-weight: bold;
-`;
-
-const Pokemon = ({ pokemon = {} }) => {
+const Pokemon = ({ pokemon = {}, children }) => {
   const { id, name, height, weight, imageUrl, types, stats, japName } = pokemon;
+
   return (
-    <>
+    <StyledContainer types={types}>
       <Header>
         <h3>{id}</h3>
         <h2 className="name">{name}</h2>
@@ -59,7 +29,8 @@ const Pokemon = ({ pokemon = {} }) => {
         </ImageContainer>
         <Stats types={types} stats={stats} />
       </Main>
-    </>
+      {children}
+    </StyledContainer>
   );
 };
 

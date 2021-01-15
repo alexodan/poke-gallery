@@ -1,6 +1,4 @@
-import theme from "styled-theming";
-
-export const backgroundColor = theme("mode", {
+export const backgroundColors = {
   ice: "#818CCF",
   ghost: "#775595",
   electric: "#FFCC33",
@@ -14,4 +12,4 @@ export const backgroundColor = theme("mode", {
   bug: "#A5D985",
   grass: "#53843F",
   default: "#008080",
-});
+};
