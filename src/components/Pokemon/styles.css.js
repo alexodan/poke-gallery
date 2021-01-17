@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColors } from "./theme";
+import { backgroundColors } from "../theme";
 
 export const StyledContainer = styled.div`
   border-radius: 20px;

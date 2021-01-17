@@ -1,5 +1,5 @@
 import React from "react";
-import Stats from "./Stats";
+import Stats from "../Stats";
 import {
   StyledContainer,
   Header,
@@ -7,7 +7,7 @@ import {
   ImageContainer,
   Image,
   StyledJapName,
-} from "./Pokemon.css";
+} from "./styles.css";
 
 const Pokemon = ({ pokemon = {}, children }) => {
   const { id, name, height, weight, imageUrl, types, stats, japName } = pokemon;
