@@ -10,15 +10,17 @@ export const StyledContainer = styled.div`
         ]
       : "default";
   }};
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: space-around;
-  padding: 35px 40px 30px 40px;
   position: relative;
   ${MediaQueries.FromTablet} {
-    height: 50vh;
+    height: auto;
+    padding: 35px 40px 30px 40px;
+  }
+  ${MediaQueries.FromDesktop} {
+    border-radius: 20px;
   }
 `;
 
@@ -46,10 +48,11 @@ export const Main = styled.main`
 `;
 
 export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
   ${MediaQueries.FromDesktop} {
     width: 70%;
     margin: 0 10% 0 5%;
-    display: flex;
     justify-content: flex-end;
   }
 `;
