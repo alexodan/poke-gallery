@@ -6,14 +6,15 @@ import Search from "./components/Search";
 import { StyledContainer } from "./styles.css";
 
 function App() {
-  const [pokemonId, setPokemonId] = useState(6);
+  const [pokemonId, setPokemonId] = useState(197);
   const [pokemonName, setPokemonName] = useState("");
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
-    fetchPokemonData({ id: pokemonId, name: pokemonName }).then((pokemon) =>
-      setPokemon(pokemon)
-    );
+    fetchPokemonData({
+      searchId: pokemonId,
+      searchName: pokemonName,
+    }).then((pokemon) => setPokemon(pokemon));
   }, [pokemonId, pokemonName]);
 
   return (

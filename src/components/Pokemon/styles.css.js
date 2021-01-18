@@ -1,9 +1,8 @@
 import styled from "styled-components";
+import { MediaQueries } from "../../utils/MediaQueries";
 import { backgroundColors } from "../theme";
 
 export const StyledContainer = styled.div`
-  border-radius: 20px;
-  padding: 35px 40px 30px 40px;
   background-color: ${(props) => {
     return props.types
       ? backgroundColors[
@@ -11,18 +10,33 @@ export const StyledContainer = styled.div`
         ]
       : "default";
   }};
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  padding: 35px 40px 30px 40px;
+  position: relative;
+  ${MediaQueries.FromTablet} {
+    height: 50vh;
+  }
 `;
 
 export const Header = styled.header`
   position: absolute;
   top: 40px;
   left: 50px;
+  width: 220px;
+  h3,
+  h2 {
+    font-weight: bold;
+  }
   .name {
     text-transform: capitalize;
     font-size: 2rem;
   }
-  .attributes {
-    width: 27%;
+  .attributes p {
+    margin-top: 10px;
   }
 `;
 
@@ -32,10 +46,12 @@ export const Main = styled.main`
 `;
 
 export const ImageContainer = styled.div`
-  width: 70%;
-  margin: 0 10% 0 5%;
-  display: flex;
-  justify-content: flex-end;
+  ${MediaQueries.FromDesktop} {
+    width: 70%;
+    margin: 0 10% 0 5%;
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
 
 export const Image = styled.img`
@@ -46,8 +62,21 @@ export const Image = styled.img`
 `;
 
 export const StyledJapName = styled.h2`
-  opacity: 0.25;
+  opacity: 0.4;
   color: black;
-  font-size: 6rem;
+  font-size: 3rem;
   font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  ${MediaQueries.FromTablet} {
+    transform: none;
+    left: 100px;
+    top: 75px;
+    font-size: 6rem;
+    opacity: 0.25;
+    width: 600px;
+  }
 `;

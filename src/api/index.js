@@ -11,11 +11,11 @@ const fetchDataApi = (query) =>
 const fetchJapNames = () =>
   fetch(`${JAP_NAME_API_URL}`).then((res) => res.json());
 
-export const fetchPokemonData = async ({ id, name }) => {
-  const data = await fetchDataApi(id || name);
+export const fetchPokemonData = async ({ searchId, searchName }) => {
+  const data = await fetchDataApi(searchId || searchName);
   const names = await fetchJapNames();
   const japaneseName = names[+data.id + 1];
-  const { height, weight, types, stats } = data;
+  const { id, name, height, weight, types, stats } = data;
   return PokemonModel(
     id,
     name,

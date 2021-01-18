@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import { MediaQueries } from "../../utils/MediaQueries";
 
 export const StyledSearch = styled.div`
-  display: flex;
   justify-content: space-around;
-  width: 100%;
+  display: none;
+  ${MediaQueries.FromTablet} {
+    width: 100%;
+    display: flex;
+  }
 `;
 
 export const InputContainer = styled.div`

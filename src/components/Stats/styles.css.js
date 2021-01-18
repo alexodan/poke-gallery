@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { MediaQueries } from "../../utils/MediaQueries";
 
 export const StyledStats = styled.div`
   display: flex;
   flex-direction: column;
   width: 25%;
+  display: none;
+  ${MediaQueries.FromTablet} {
+    display: block;
+  }
   .stats {
     h2 {
       margin: 10px 0 20px 0;
