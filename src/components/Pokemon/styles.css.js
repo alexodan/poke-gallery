@@ -74,6 +74,7 @@ export const StyledJapName = styled.h2`
   left: 50%;
   transform: translateX(-50%);
   width: 250px;
+  height: 6rem;
   ${MediaQueries.FromTablet} {
     transform: none;
     left: 100px;

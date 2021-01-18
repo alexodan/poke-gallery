@@ -21,7 +21,6 @@ export const InputContainer = styled.div`
   }
   button {
     border-radius: 5px;
-    outline: none;
     border: none;
     background-color: #f0f0f0;
     padding: 5px;
