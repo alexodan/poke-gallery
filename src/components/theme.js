@@ -11,5 +11,6 @@ export const backgroundColors = {
   fighting: "#CD853F",
   bug: "#A5D985",
   grass: "#53843F",
+  psychic: "#9932CC",
   default: "#008080",
 };
